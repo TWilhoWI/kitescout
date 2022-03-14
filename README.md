@@ -16,7 +16,6 @@ This is a combination of a slightly tweaked version of Nightscout and two of my 
     - Activity
     - Sensitivity
   - Reason - displays the reason for why openAPS decided to make its adjustment. 
-  - Prediction lines missing? yes, but they're really easy to add, just havn't decided how I want them jet (tried, and it works)
 - **OmnipodStash** - This is a neat little web-app that keeps track of your stash of omnipods/sensors/insulin bottles and will send you enoying email once a day when one of them runs low. 
 
 ![omnipodstash](./lib/omnipod_stash/Assets/website.png)
