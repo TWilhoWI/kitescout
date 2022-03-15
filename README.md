@@ -54,8 +54,8 @@ git push --set-upstream origin wip/kitescout
   
 Congratulations, you now have my branch deployed to your heroku.
 
-### Update to my latest code
-is done in three steps
+### Updates
+If I have made updates to the code and you want to fetch them to your branch, this is how you do it: 
 1. pull my latest commit from the branch
 2. push to your github
 ```bash
