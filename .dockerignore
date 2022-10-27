@@ -3,12 +3,13 @@
 
 # Items from .gitignore
 bower_components/
-node_modules/
+*/*/node_modules/
+**/node_modules/
 bundle/bundle.out.js
 .idea/
 *.iml
-my.env
-*.env
+**/*.env
+**/package-lock.json
 static/bower_components/
 .*.sw?
 .DS_Store
@@ -16,3 +17,4 @@ static/bower_components/
 /iisnode
 coverage/
 npm-debug.log
+Footer

@@ -7,7 +7,7 @@ services:
       - ${NS_MONGO_DATA_DIR:-./mongo-data}:/data/db:cached
 
   nightscout:
-    image: nightscout/cgm-remote-monitor:latest
+    image: klalle/nightscout
     container_name: nightscout
     restart: always
     depends_on:
@@ -67,7 +67,7 @@ services:
       - "--certificatesresolvers.le.acme.httpchallenge.entrypoint=web"
       - '--certificatesresolvers.le.acme.storage=/letsencrypt/acme.json'
       # Change the below to match your email address
-      - '--certificatesresolvers.le.acme.email=example@example.com'
+      - '--certificatesresolvers.le.acme.email=karl.d.hagstrom@gmail.com'
     ports:
       - '443:443'
       - '80:80'

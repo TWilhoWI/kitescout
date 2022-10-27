@@ -16,6 +16,17 @@ This is a combination of a slightly tweaked version of Nightscout and two of my 
     - Activity
     - Sensitivity
   - Reason - displays the reason for why openAPS decided to make its adjustment. 
+
+### TODO
+- ISF & CR 
+  - show current in table (after adjustment by autosens/%profile)
+  - tooltip, show normal profile
+- Basal
+  - Current vs profile
+- prediction lines
+  - Fill the one that is currently in use
+- 
+
 - **OmnipodStash** - This is a neat little web-app that keeps track of your stash of omnipods/sensors/insulin bottles and will send you enoying email once a day when one of them runs low. 
 
 ![omnipodstash](./lib/omnipod_stash/Assets/website.png)
