@@ -1,17 +1,17 @@
 version: '3'
 
 services:
-  mongo:
-    image: mongo:4.4
-    volumes:
-      - ${NS_MONGO_DATA_DIR:-./mongo-data}:/data/db:cached
+  # mongo:
+  #   image: mongo:4.4
+  #   volumes:
+  #     - ${NS_MONGO_DATA_DIR:-./mongo-data}:/data/db:cached
 
   nightscout:
     image: klalle/nightscout
     container_name: nightscout
     restart: always
-    depends_on:
-      - mongo
+    # depends_on:
+    #   - mongo
     labels:
       - 'traefik.enable=true'
       # Change the below Host from `localhost` to be the web address where Nightscout is running.
@@ -49,7 +49,7 @@ services:
       # AUTH_DEFAULT_ROLES (readable) - possible values readable, denied, or any valid role name.
       # When readable, anyone can view Nightscout without a token. Setting it to denied will require
       # a token from every visit, using status-only will enable api-secret based login.
-      AUTH_DEFAULT_ROLES: denied
+      AUTH_DEFAULT_ROLES: readable
 
       # For all other settings, please refer to the Environment section of the README
       # https://github.com/nightscout/cgm-remote-monitor#environment
