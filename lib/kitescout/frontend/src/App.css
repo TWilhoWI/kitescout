@@ -22,8 +22,15 @@ html, body  {
   margin: auto;
   margin-bottom: 10px;
   text-align: right;
-
 }
+.infoTable td {
+  padding-left: 5px;
+  /* border: 1px solid; */
+}
+.infoTable tr {
+  line-height: 25px;
+}
+
 .reason{
   color: rgb(128,128,128);
 }
@@ -34,10 +41,7 @@ html, body  {
   text-align: center;
 
 }
-.infoTable td {
-  padding-left: 5px;
-  /* border: 1px solid; */
-}
+
 
 .tooltip {
   max-width: 400px;
