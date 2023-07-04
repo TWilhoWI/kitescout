@@ -27,10 +27,6 @@ This is a combination of a slightly tweaked version of Nightscout and two of my 
   - Fill the one that is currently in use
 - 
 
-- **OmnipodStash** - This is a neat little web-app that keeps track of your stash of omnipods/sensors/insulin bottles and will send you enoying email once a day when one of them runs low. 
-
-![omnipodstash](./lib/omnipod_stash/Assets/website.png)
-
 
 ## Installation
 The installation process is the same as with a usual nightscout installation, but you need to fetch my branch **wip/kitescout** from my fork, and then choose to the branch (**wip/kitescout**) instead of master-branch under Heroku/deploy!
@@ -74,49 +70,6 @@ git pull klalle wip/kitescout
 git push
 ```
 3. deploy the branch (again) from heroku/deploy
-
-### Enable OmnipodStash email-functionality
-To enable the OmnipodStash-app to function, you also need:
-  - to enable 3 heroku-variables
-  - a scheduled task that finds pods/sensor changes
-
-## Heroku variables
-Add these variables in Heroku to get email notifications:
-
-- **HEROKU_APP_NAME** = Same as the one you choose for the app (without "https://" and ".herokuapp.com")
-- **FROM** = **ordernewpods** 
-- **EMAIL_TO** = (comma separated list of emails to get notification)
-
-Optional parameters (3 is default value for these ones => less than 3 pods/sensors/insulin will send you and email per day!)
-- **LANGUAGE** = ENG (deafults to email text in swedish...)
-- **INSULINLIMIT** = 3
-- **PODLIMIT** = 3
-- **SENSORLIMIT** = 3
-
-See [this list](https://github.com/klalle/AAPS-installation-setup/blob/main/README_EN.md#install-nightscout) of my Heroku-variables to get your NS to look like my NS-site above (omnipod-stash-specific settings like "HEROKU_APP_NAME", "FROM" and "EMAIL_TO" are not included in this list...)
-
-You also need to setup a task scheduler that searches for pod/sensor switches in the NS-db. 
-
-## Heroku Task Scheduler
-To get you app to update/check your stash once a day, you need to setup a Task scheduler.
-1. Open the "Resources"-tab and in the Add-ons searchbox type "heroku scheduler" and click on it
-2. Make sure you have the "Standard - Free"-plan selected (default) and press "Submit order from" 
-3. Click on the newly added "Heroku Scheduler" (opens up new page)
-4. "Create job"
-5. "Every day at..." - and select a time (obs! UTC = London time!)
-6. after the $ paste "runAllTasks" (without the "")
-7. click "save job"
-
-![email](./lib/omnipod_stash/Assets/task.png)
-
-
-If you don't want to change your Nightscout, but want to try my prograns as stand-alone applications: 
-- **[OmnipodStash](https://github.com/maja-lofgren/omnipod_stash)**
-- **[Kitescout](https://github.com/klalle/kitescout)**
-  - no readme-file.. but take a look at omnipod-stash above how it's done in Heroku! 
-  - needs config-var: MONGODB_URI
-  - If setup in another heroku-account: use https://kaffeine.herokuapp.com/ to hinder it from going into sleep...
-  
 
 
 

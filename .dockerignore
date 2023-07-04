@@ -18,3 +18,5 @@ static/bower_components/
 coverage/
 npm-debug.log
 Footer
+**/build/
+**/package-lock.json
